@@ -56,9 +56,7 @@ A full-stack web application that allows admins to create and manage polls, whil
 | Render        | Hosting backend Node.js API                      |
 
 ✅ 3. 📊 ER Diagram (Text Format)
-markdown
-Copy
-Edit
+
 ## 📊 Entity Relationship (ER) Diagram
 
 **User**
@@ -83,9 +81,7 @@ Edit
 - Each option tracks voters and vote count
 
 ✅ 4. 📬 API Endpoints List
-markdown
-Copy
-Edit
+
 ## 📬 API Endpoints
 
 ### 🧑‍💻 Auth
