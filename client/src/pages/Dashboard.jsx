@@ -29,7 +29,9 @@ const Dashboard = () => {
     if (!window.confirm("Are you sure you want to delete this poll?")) return;
 
     try {
-      await axios.delete(`http://localhost:8000/api/polls/${pollId}`);
+      await axios.delete(
+        `https://voting-backend-yxqt.onrender.com/api/polls/${pollId}`
+      );
       fetchPolls();
     } catch (err) {
       alert("Delete failed");
@@ -38,7 +40,7 @@ const Dashboard = () => {
 
   const handleClose = async (pollId) => {
     try {
-      await axios.patch(`http://localhost:8000/api/polls/close/${pollId}`);
+      await axios.patch(`https://voting-backend-yxqt.onrender.com/api/polls/close/${pollId}`);
       alert("Poll closed!");
       fetchPolls();
     } catch (err) {

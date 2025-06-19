@@ -18,7 +18,10 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8000/api/auth/register", formData);
+      await axios.post(
+        "https://voting-backend-yxqt.onrender.com/api/auth/register",
+        formData
+      );
       alert("Registration successful. Please login.");
       navigate("/");
     } catch (err) {

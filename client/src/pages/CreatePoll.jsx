@@ -32,7 +32,7 @@ const CreatePoll = () => {
     }
 
     try {
-      await axios.post("http://localhost:8000/api/polls", {
+      await axios.post("https://voting-backend-yxqt.onrender.com/api/polls", {
         question,
         options: options.filter((o) => o.trim() !== ""),
         closingTime,

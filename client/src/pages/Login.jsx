@@ -19,7 +19,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:8000/api/auth/login",
+        "https://voting-backend-yxqt.onrender.com/api/auth/login",
         formData
       );
       const user = res.data.user;

@@ -24,14 +24,16 @@ const VotePoll = () => {
 
     const fetchPollStatus = async () => {
       try {
-        const res = await axios.get(`http://localhost:8000/api/polls/open`);
+        const res = await axios.get(
+          `https://voting-backend-yxqt.onrender.com/api/polls/open`
+        );
         const foundPoll = res.data.find((p) => p._id === id);
 
         if (foundPoll) {
           setPoll(foundPoll);
         } else {
           const resultRes = await axios.get(
-            `http://localhost:8000/api/polls/results/${id}?userId=${user.id}`
+            `https://voting-backend-yxqt.onrender.com/api/polls/results/${id}?userId=${user.id}`
           );
           setResults(resultRes.data.results || []);
           setPoll({ question: resultRes.data.question });
@@ -55,10 +57,13 @@ const VotePoll = () => {
     }
 
     try {
-      await axios.post(`http://localhost:8000/api/polls/vote/${id}`, {
-        userId: user.id,
-        optionIndex: selectedOption,
-      });
+      await axios.post(
+        `https://voting-backend-yxqt.onrender.com/api/polls/vote/${id}`,
+        {
+          userId: user.id,
+          optionIndex: selectedOption,
+        }
+      );
       alert("Vote submitted!");
     } catch (err) {
       setError(err.response?.data?.message || "Vote failed.");
